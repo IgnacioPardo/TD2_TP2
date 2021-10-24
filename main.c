@@ -147,9 +147,6 @@ int inverseDelete(struct container* c, char* value) {
 		int count = 0;
 		int i = getIndex(value);
 
-		//struct node* n = (struct node*)malloc(sizeof(struct node*));
-		//n->next = c->data[i];
-
     struct node* n = c->data[i];
 
 		while(n->next != 0) {
@@ -163,7 +160,6 @@ int inverseDelete(struct container* c, char* value) {
 				n = n->next;
 			}
 		}
-		c->count -= count;
 
 		if (!equalStr(c->data[i]->data, value)){
 			struct node* tmp = c->data[i];
@@ -171,7 +167,8 @@ int inverseDelete(struct container* c, char* value) {
 			free(tmp);
 			count++;
 		}
-
+		
+		c->count -= count;
     return count;
 }
 
