@@ -54,7 +54,7 @@ int equalStr(char* s1, char* s2){
 }
 
 int cmpStr(char* s1, char* s2){
-	//Compara dos strings en orden lexicograafico. Retorna (0 si son iguales, 1 si s1<s2, −1 si s2<s1)
+	//Compara dos strings en orden lexicografico. Retorna (0 si son iguales, 1 si s1<s2, −1 si s2<s1)
 
 	int l1 = len(s1);
 	int l2 = len(s2);

@@ -26,7 +26,7 @@
 	//Evalua la igualdad entre los strings s1 y s2 caracter por caracter
 
 	int cmpStr(char* s1, char* s2;
-	//Compara dos strings en orden lexicograafico. Retorna (0 si son iguales, 1 si s1<s2, −1 si s2<s1)
+	//Compara dos strings en orden lexicografico. Retorna (0 si son iguales, 1 si s1<s2, −1 si s2<s1)
 
 	void split(char* source, int count, char** s1, char** s2;
 	//A partir del string en source, genera dos nuevos strings s1 y s2. s1 debe contener los primeros count caracteres del string source, mientas que s2 debe contener los caracteres restantes. La memoria del string source pasado por parametro debe ser liberada. En caso que count supere la cantidad de caracteres totales de source, se debe retornar en s2 un string vacio. El parametro count es siempre un numero positivo.
