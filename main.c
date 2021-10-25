@@ -136,6 +136,24 @@ int test_cmpStr4c(){
 	return 0;
 }
 
+int test_cmpStr4d(){
+	//Dos strings diferentes s1 < s2
+	char *s1 = "abc";
+	char *s2 = "abcd";
+	if (cmpStr(s1, s2) == 1)
+		return 1;
+	return 0;
+}
+
+int test_cmpStr4e(){
+	//Dos strings diferentes s1 > s2
+	char *s1 = "abcd";
+	char *s2 = "abc";
+	if (cmpStr(s1, s2) == -1)
+		return 1;
+	return 0;
+}
+
 int test_split1a(){
 	//Un string vacio, count = 1
   char* first;
@@ -332,7 +350,7 @@ int test_contains4(){
 }
 
 
-int test_inverseDelete1(){
+int test_inverseDelete1a(){
 	//Para un dato que se ubique al comienzo de una lista
 	struct container* c = newContainer();
 	sortedAdd(c, "aristocracia");
@@ -348,7 +366,23 @@ int test_inverseDelete1(){
 	return 0;
 }
 
-int test_inverseDelete2(){
+int test_inverseDelete1b(){
+	//Para un dato que se ubique al comienzo de una lista
+	struct container* c = newContainer();
+	sortedAdd(c, "dudoso");
+	sortedAdd(c, "dromedario");
+	sortedAdd(c, "deuteronomio");
+
+	int count = inverseDelete(c, "deuteronomio");
+	if (equalStr(c->data[0]->data, "deuteronomio") && count == 2 && c->count == 1){
+		deleteContainer(c);
+		return 1;
+	}
+	deleteContainer(c);
+	return 0;
+}
+
+int test_inverseDelete2a(){
 	//Para un dato que se ubique al final de una lista
 	struct container* c = newContainer();
 	sortedAdd(c, "aristocracia");
@@ -364,7 +398,23 @@ int test_inverseDelete2(){
 	return 0;
 }
 
-int test_inverseDelete3(){
+int test_inverseDelete2b(){
+	//Para un dato que se ubique al comienzo de una lista
+	struct container* c = newContainer();
+	sortedAdd(c, "dudoso");
+	sortedAdd(c, "dromedario");
+	sortedAdd(c, "deuteronomio");
+
+	int count = inverseDelete(c, "dromedario");
+	if (equalStr(c->data[0]->data, "dromedario") && count == 2 && c->count == 1){
+		deleteContainer(c);
+		return 1;
+	}
+	deleteContainer(c);
+	return 0;
+}
+
+int test_inverseDelete3a(){
 	//Para un dato que se ubique entre dos nodos de una lista
 	struct container* c = newContainer();
 	sortedAdd(c, "aristocracia");
@@ -373,6 +423,22 @@ int test_inverseDelete3(){
 
 	int count = inverseDelete(c, "adenosintrifosfato");
 	if (equalStr(c->data[1]->data, "adenosintrifosfato") && count == 2 && c->count == 1){
+		deleteContainer(c);
+		return 1;
+	}
+	deleteContainer(c);
+	return 0;
+}
+
+int test_inverseDelete3b(){
+	//Para un dato que se ubique al comienzo de una lista
+	struct container* c = newContainer();
+	sortedAdd(c, "dudoso");
+	sortedAdd(c, "dromedario");
+	sortedAdd(c, "deuteronomio");
+
+	int count = inverseDelete(c, "dudoso");
+	if (equalStr(c->data[0]->data, "dudoso") && count == 2 && c->count == 1){
 		deleteContainer(c);
 		return 1;
 	}
@@ -393,7 +459,9 @@ int main() {
 	printf("%stest_cmpStr3b\n", test_cmpStr3b() ? GRN : RED);
 	printf("%stest_cmpStr4a\n", test_cmpStr4a() ? GRN : RED);
 	printf("%stest_cmpStr4b\n", test_cmpStr4b() ? GRN : RED);
-	printf("%stest_cmpStr4c\n\n", test_cmpStr4c() ? GRN : RED);
+	printf("%stest_cmpStr4c\n", test_cmpStr4c() ? GRN : RED);
+	printf("%stest_cmpStr4d\n", test_cmpStr4d() ? GRN : RED);
+	printf("%stest_cmpStr4e\n\n", test_cmpStr4e() ? GRN : RED);
 	printf("%stest_split1a\n", test_split1a() ? GRN : RED);
 	printf("%stest_split1b\n", test_split1b() ? GRN : RED);
 	printf("%stest_split1c\n", test_split1c() ? GRN : RED);
@@ -411,9 +479,12 @@ int main() {
 	printf("%stest_contains2\n", test_contains2() ? GRN : RED);
 	printf("%stest_contains3\n", test_contains3() ? GRN : RED);
 	printf("%stest_contains4\n\n", test_contains4() ? GRN : RED);
-	printf("%stest_inverseDelete1\n", test_inverseDelete1() ? GRN : RED);
-	printf("%stest_inverseDelete2\n", test_inverseDelete2() ? GRN : RED);
-	printf("%stest_inverseDelete3\n", test_inverseDelete3() ? GRN : RED);
+	printf("%stest_inverseDelete1a\n", test_inverseDelete1a() ? GRN : RED);
+	printf("%stest_inverseDelete1b\n", test_inverseDelete1b() ? GRN : RED);
+	printf("%stest_inverseDelete2a\n", test_inverseDelete2a() ? GRN : RED);
+	printf("%stest_inverseDelete2b\n", test_inverseDelete2b() ? GRN : RED);
+	printf("%stest_inverseDelete3a\n", test_inverseDelete3a() ? GRN : RED);
+	printf("%stest_inverseDelete3b\n", test_inverseDelete3b() ? GRN : RED);
 
 	return 0;
 }
