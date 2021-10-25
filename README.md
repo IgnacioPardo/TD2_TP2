@@ -13,43 +13,43 @@
 📄container.c	
 //Definicion de las funciones de contenedores
 	
-	int len(char* s;
+	int len(char* s)
 	//Longitud del string s
 
-	int dupStr(char* src, char** dst;
+	int dupStr(char* src, char** dst)
 	//Duplica un string. Debe contar la cantidad de caracteres totales de src y solicitar la memoria equivalente. Luego, debe copiar todos los caracteres a esta nueva area de memoria. El puntero al nuevo string se almacenara en el doble puntero dst. Ademas, como valor de retorno se debe retornar el tamaño del string.
 
-	char normalizeChar(char c;
+	char normalizeChar(char c)
 	//Retorna el char c en mayuscula
 
-	int equalStr(char* s1, char* s2;
+	int equalStr(char* s1, char* s2)
 	//Evalua la igualdad entre los strings s1 y s2 caracter por caracter
 
-	int cmpStr(char* s1, char* s2;
+	int cmpStr(char* s1, char* s2)
 	//Compara dos strings en orden lexicografico. Retorna (0 si son iguales, 1 si s1<s2, −1 si s2<s1)
 
-	void split(char* source, int count, char** s1, char** s2;
+	void split(char* source, int count, char** s1, char** s2
 	//A partir del string en source, genera dos nuevos strings s1 y s2. s1 debe contener los primeros count caracteres del string source, mientas que s2 debe contener los caracteres restantes. La memoria del string source pasado por parametro debe ser liberada. En caso que count supere la cantidad de caracteres totales de source, se debe retornar en s2 un string vacio. El parametro count es siempre un numero positivo.
 
-	int getIndex(char * s;
+	int getIndex(char * s)
 	//Retorna el indice del contenedor a donde corresponde el string s
 
-	int contains(struct container* c, char* value);
+	int contains(struct container* c, char* value)
 	//Determina la cantidad de veces que value est ́a definido dentro de container. Debe retonar la cantidad de apariciones del dato.
 
-	void sortedAdd(struct container* c, char* value);
+	void sortedAdd(struct container* c, char* value)
 	//Agregar el string value pasado por par ́ametro dentro del container, respetando los invariantes de la estructura indicados anteriormente.
 
-	int inverseDelete(struct container* c, char* value);
+	int inverseDelete(struct container* c, char* value)
 	//Borra todos los datos del slot al que pertenece el string value, menos todas las copias que existan del string value. Debe retonar la cantidad de datos que fueron borrados.	
 
-	struct container* newContainer();
+	struct container* newContainer()
 	//Solicita memoria e inicializa una estructura container vacia.
 
-	void deleteContainer(struct container* c);
+	void deleteContainer(struct container* c)
 	//Borra toda la memoria solicitada dentro de un container.
 
-	void printContainer(struct container* c);
+	void printContainer(struct container* c)
 	//Imprime en pantalla el container pasado por parametro.
 
 
