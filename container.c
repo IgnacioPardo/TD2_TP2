@@ -271,14 +271,14 @@ void deleteContainer(struct container* c) {
 void printContainer(struct container* c) {
 	//Imprime en pantalla el container pasado por parametro.
 	
-	printf("Cointeiner count: %i\n", c->count);
+	printf("\x1B[37m\nCointeiner count: %i\n", c->count);
 	for(int i=0; i<4; i++) {
-		fprintf(stdout,"%i -> ",i);
+		fprintf(stdout,"\x1B[37m%i -> ",i);
 		struct node* n = c->data[i];
 		while(n != 0) {
-			fprintf(stdout,"[%s]->",n->data);
+			fprintf(stdout,"\x1B[37m[%s]->",n->data);
 			n = n->next;
 		}
-		fprintf(stdout," %i\n", 0);
+		fprintf(stdout,"\x1B[37m %i\n", 0);
 	}
 }

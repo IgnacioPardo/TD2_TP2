@@ -17,7 +17,7 @@
 	//Longitud del string s
 
 	int dupStr(char* src, char** dst)
-	//Duplica un string. Debe contar la cantidad de caracteres totales de src y solicitar la memoria equivalente. Luego, debe copiar todos los caracteres a esta nueva area de memoria. El puntero al nuevo string se almacenara en el doble puntero dst. Ademas, como valor de retorno se debe retornar el tamaño del string.
+	//Duplica un string. Debe contar la cantidad de caracteres totales de src y solicitar la memoria equivalente. Luego, debe copiar todos los caracteres a esta nueva area de memoria. El puntero al nuevo string se almacenara en el doble puntero dst. Ademas, como valor de retorno se debe retornar el tamaño del string
 
 	char normalizeChar(char c)
 	//Retorna el char c en mayuscula
@@ -29,7 +29,7 @@
 	//Compara dos strings en orden lexicografico. Retorna (0 si son iguales, 1 si s1<s2, −1 si s2<s1)
 
 	void split(char* source, int count, char** s1, char** s2
-	//A partir del string en source, genera dos nuevos strings s1 y s2. s1 debe contener los primeros count caracteres del string source, mientas que s2 debe contener los caracteres restantes. La memoria del string source pasado por parametro debe ser liberada. En caso que count supere la cantidad de caracteres totales de source, se debe retornar en s2 un string vacio. El parametro count es siempre un numero positivo.
+	//A partir del string en source, genera dos nuevos strings s1 y s2. s1 debe contener los primeros count caracteres del string source, mientas que s2 debe contener los caracteres restantes. La memoria del string source pasado por parametro debe ser liberada. En caso que count supere la cantidad de caracteres totales de source, se debe retornar en s2 un string vacio. El parametro count es siempre un numero positivo
 
 	int getIndex(char * s)
 	//Retorna el indice del contenedor a donde corresponde el string s
@@ -57,9 +57,9 @@
 //tests
 
 	int test_dup1()
-	//String vacio.
+	//String vacio
 	int test_dup2()
-	//string de un caracter
+	//String de un caracter
 	int test_dup3()
 	//String que incluya todos los caracteres validos distintos de cero
 	int test_cmpStr1()
