@@ -384,7 +384,7 @@ int main() {
 
 	printf("%stest_dup1\n", test_dup1() ? GRN : RED);
 	printf("%stest_dup2\n", test_dup2() ? GRN : RED);
-	printf("%stest_dup3\n", test_dup3() ? GRN : RED);
+	printf("%stest_dup3\n\n", test_dup3() ? GRN : RED);
 	printf("%stest_cmpStr1\n", test_cmpStr1() ? GRN : RED);
 	printf("%stest_cmpStr2a\n", test_cmpStr2a() ? GRN : RED);
 	printf("%stest_cmpStr2b\n", test_cmpStr2b() ? GRN : RED);
@@ -393,7 +393,7 @@ int main() {
 	printf("%stest_cmpStr3b\n", test_cmpStr3b() ? GRN : RED);
 	printf("%stest_cmpStr4a\n", test_cmpStr4a() ? GRN : RED);
 	printf("%stest_cmpStr4b\n", test_cmpStr4b() ? GRN : RED);
-	printf("%stest_cmpStr4c\n", test_cmpStr4c() ? GRN : RED);
+	printf("%stest_cmpStr4c\n\n", test_cmpStr4c() ? GRN : RED);
 	printf("%stest_split1a\n", test_split1a() ? GRN : RED);
 	printf("%stest_split1b\n", test_split1b() ? GRN : RED);
 	printf("%stest_split1c\n", test_split1c() ? GRN : RED);
@@ -402,18 +402,18 @@ int main() {
 	printf("%stest_split2c\n", test_split2c() ? GRN : RED);
 	printf("%stest_split3a\n", test_split3a() ? GRN : RED);
 	printf("%stest_split3b\n", test_split3b() ? GRN : RED);
-	printf("%stest_split3c\n", test_split3c() ? GRN : RED);
+	printf("%stest_split3c\n\n", test_split3c() ? GRN : RED);
 	printf("%stest_sortedAdd1\n", test_sortedAdd1() ? GRN : RED);
 	printf("%stest_sortedAdd2\n", test_sortedAdd2() ? GRN : RED);
 	printf("%stest_sortedAdd3\n", test_sortedAdd3() ? GRN : RED);
-	printf("%stest_sortedAdd4\n", test_sortedAdd4() ? GRN : RED);
+	printf("%stest_sortedAdd4\n\n", test_sortedAdd4() ? GRN : RED);
 	printf("%stest_contains1\n", test_contains1() ? GRN : RED);
 	printf("%stest_contains2\n", test_contains2() ? GRN : RED);
 	printf("%stest_contains3\n", test_contains3() ? GRN : RED);
-	printf("%stest_contains4\n", test_contains4() ? GRN : RED);
+	printf("%stest_contains4\n\n", test_contains4() ? GRN : RED);
 	printf("%stest_inverseDelete1\n", test_inverseDelete1() ? GRN : RED);
 	printf("%stest_inverseDelete2\n", test_inverseDelete2() ? GRN : RED);
 	printf("%stest_inverseDelete3\n", test_inverseDelete3() ? GRN : RED);
-	
+
 	return 0;
 }
