@@ -62,9 +62,9 @@ int cmpStr(char* s1, char* s2){
 	//Dada la longitud de uno de los dos strings, sin importar cual, itera por los caracteres de ambos.
 	for (int i = 0; i < l1; i++){
 		// Si el valor de i llega a valer la longitud de un string pero es menor que la longitud del otro, asume todas las posiciones previas fueron iguales, pero el string en si es mas corto por lo tanto es menor en orden lexicografico.
-		if (i == l1 && i < l2)
+		if (i+1 == l1 && i+1 < l2)
 			return 1;
-		else if (i == l2 && i < l1)
+		else if (i+1 == l2 && i+1 < l1)
 			return -1;
 		else{
 			//Para comparar los caracteres de cada string, los pasa todos a mayusculas para respetar el orden.
@@ -82,7 +82,8 @@ int cmpStr(char* s1, char* s2){
 	if (equalStr(s1, s2))
 		return 0;
 
-	return 1;
+	//Todas las condiciones son evaluadas previamente, la unica restante es s1 == s2, que es evaluada previamente con la funcion equalStr.
+	return 0;	
 }
 
 void split(char* source, int count, char** s1, char** s2){

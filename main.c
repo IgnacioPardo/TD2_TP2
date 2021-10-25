@@ -67,6 +67,51 @@ int test_dup3(int print){
 	return 0;
 }
 
+int test_equalStr1(int print) {
+	//Dos strings vacios
+	
+	char *s1 = "";
+	char *s2 = "";
+	
+	if (print){
+		printf("%sDos strings vacios\n", CYN);
+		printf("%s \"%s\" == \"%s\"", WHT, s1, s2);
+	}
+
+	return equalStr(s1, s2);
+	
+}
+
+int test_equalStr2(int print) {
+	//Dos strings iguales
+	
+	char *s1 = "hola";
+	char *s2 = "hola";
+	
+	if (print){
+		printf("%sDos strings iguales\n", CYN);
+		printf("%s \"%s\" == \"%s\"", WHT, s1, s2);
+	}
+
+	return equalStr(s1, s2);
+	
+}
+
+int test_equalStr3(int print) {
+	//Dos strings diferentes
+	
+	char *s1 = "hola";
+	char *s2 = "chau";
+	
+	if (print){
+		printf("%sDos strings diferentes\n", CYN);
+		printf("%s \"%s\" == \"%s\"", WHT, s1, s2);
+	}
+
+	return !equalStr(s1, s2);
+	
+}
+
 int test_cmpStr1(int print){
 	//Dos string vacios
 	if (print)
@@ -728,6 +773,9 @@ int main() {
 	printf("\n%stest_dup1%s", (test_dup1(print) ? GRN "✅ " : RED "❌ "), (print ? separator : ""));
 	printf("\n%stest_dup2%s", (test_dup2(print) ? GRN "✅ " : RED "❌ "), (print ? separator : ""));
 	printf("\n%stest_dup3%s\n", (test_dup3(print) ? GRN "✅ " : RED "❌ "), (print ? separator : ""));
+	printf("\n%stest_equalStr1%s", (test_equalStr1(print) ? GRN "✅ " : RED "❌ "), (print ? separator : ""));
+	printf("\n%stest_equalStr2%s", (test_equalStr2(print) ? GRN "✅ " : RED "❌ "), (print ? separator : ""));
+	printf("\n%stest_equalStr3%s\n", (test_equalStr3(print) ? GRN "✅ " : RED "❌ "), (print ? separator : ""));
 	printf("\n%stest_cmpStr1%s", (test_cmpStr1(print) ? GRN "✅ " : RED "❌ "), (print ? separator : ""));
 	printf("\n%stest_cmpStr2a%s", (test_cmpStr2a(print) ? GRN "✅ " : RED "❌ "), (print ? separator : ""));
 	printf("\n%stest_cmpStr2b%s", (test_cmpStr2b(print) ? GRN "✅ " : RED "❌ "), (print ? separator : ""));
@@ -761,7 +809,7 @@ int main() {
 	printf("\n%stest_inverseDelete2a%s", (test_inverseDelete2a(print) ? GRN "✅ " : RED "❌ "), (print ? separator : ""));
 	printf("\n%stest_inverseDelete2b%s", (test_inverseDelete2b(print) ? GRN "✅ " : RED "❌ "), (print ? separator : ""));
 	printf("\n%stest_inverseDelete3a%s", (test_inverseDelete3a(print) ? GRN "✅ " : RED "❌ "), (print ? separator : ""));
-	printf("\n%stest_inverseDelete3b%s", (test_inverseDelete3b(print) ? GRN "✅ " : RED "❌ "), (print ? separator : ""));
-
+	printf("\n%stest_inverseDelete3b\n", (test_inverseDelete3b(print) ? GRN "✅ " : RED "❌ "));
+	
 	return 0;
 }
