@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include "container.h"
 
+#define RED   "\x1B[31m"
+#define GRN   "\x1B[32m"
+
 int test_dup1(){
 	//String vacio.
   char *dup;
@@ -27,7 +30,7 @@ int test_dup2(){
 }
 
 int test_dup3(){
-	//String que incluya todos los caracteres v ́alidos distintos de cero
+	//String que incluya todos los caracteres validos distintos de cero
   char *dup;
 	
 	char s[95];
@@ -379,39 +382,38 @@ int test_inverseDelete3(){
 
 int main() {
 
-	printf("test_dup1: %i\n", test_dup1());
-	printf("test_dup2: %i\n", test_dup2());
-	printf("test_dup3: %i\n", test_dup3());
-	printf("test_cmpStr1: %i\n", test_cmpStr1());
-	printf("test_cmpStr2a: %i\n", test_cmpStr2a());
-	printf("test_cmpStr2b: %i\n", test_cmpStr2b());
-	printf("test_cmpStr2c: %i\n", test_cmpStr2c());
-	printf("test_cmpStr3a: %i\n", test_cmpStr3a());
-	printf("test_cmpStr3b: %i\n", test_cmpStr3b());
-	printf("test_cmpStr4a: %i\n", test_cmpStr4a());
-	printf("test_cmpStr4b: %i\n", test_cmpStr4b());
-	printf("test_cmpStr4c: %i\n", test_cmpStr4c());
-	printf("test_split1a: %i\n", test_split1a());
-	printf("test_split1b: %i\n", test_split1b());
-	printf("test_split1c: %i\n", test_split1c());
-	printf("test_split2a: %i\n", test_split2a());
-	printf("test_split2b: %i\n", test_split2b());
-	printf("test_split2c: %i\n", test_split2c());
-	printf("test_split3a: %i\n", test_split3a());
-	printf("test_split3b: %i\n", test_split3b());
-	printf("test_split3c: %i\n", test_split3c());
-	printf("test_sortedAdd1: %i\n", test_sortedAdd1());
-	printf("test_sortedAdd2: %i\n", test_sortedAdd2());
-	printf("test_sortedAdd3: %i\n", test_sortedAdd3());
-	printf("test_sortedAdd4: %i\n", test_sortedAdd4());
-	printf("test_contains1: %i\n", test_contains1());
-	printf("test_contains2: %i\n", test_contains2());
-	printf("test_contains3: %i\n", test_contains3());
-	printf("test_contains4: %i\n", test_contains4());
-	printf("test_inverseDelete1: %i\n", test_inverseDelete1());
-	printf("test_inverseDelete2: %i\n", test_inverseDelete2());
-	printf("test_inverseDelete3: %i\n", test_inverseDelete3());
-
+	printf("%stest_dup1\n", test_dup1() ? GRN : RED);
+	printf("%stest_dup2\n", test_dup2() ? GRN : RED);
+	printf("%stest_dup3\n", test_dup3() ? GRN : RED);
+	printf("%stest_cmpStr1\n", test_cmpStr1() ? GRN : RED);
+	printf("%stest_cmpStr2a\n", test_cmpStr2a() ? GRN : RED);
+	printf("%stest_cmpStr2b\n", test_cmpStr2b() ? GRN : RED);
+	printf("%stest_cmpStr2c\n", test_cmpStr2c() ? GRN : RED);
+	printf("%stest_cmpStr3a\n", test_cmpStr3a() ? GRN : RED);
+	printf("%stest_cmpStr3b\n", test_cmpStr3b() ? GRN : RED);
+	printf("%stest_cmpStr4a\n", test_cmpStr4a() ? GRN : RED);
+	printf("%stest_cmpStr4b\n", test_cmpStr4b() ? GRN : RED);
+	printf("%stest_cmpStr4c\n", test_cmpStr4c() ? GRN : RED);
+	printf("%stest_split1a\n", test_split1a() ? GRN : RED);
+	printf("%stest_split1b\n", test_split1b() ? GRN : RED);
+	printf("%stest_split1c\n", test_split1c() ? GRN : RED);
+	printf("%stest_split2a\n", test_split2a() ? GRN : RED);
+	printf("%stest_split2b\n", test_split2b() ? GRN : RED);
+	printf("%stest_split2c\n", test_split2c() ? GRN : RED);
+	printf("%stest_split3a\n", test_split3a() ? GRN : RED);
+	printf("%stest_split3b\n", test_split3b() ? GRN : RED);
+	printf("%stest_split3c\n", test_split3c() ? GRN : RED);
+	printf("%stest_sortedAdd1\n", test_sortedAdd1() ? GRN : RED);
+	printf("%stest_sortedAdd2\n", test_sortedAdd2() ? GRN : RED);
+	printf("%stest_sortedAdd3\n", test_sortedAdd3() ? GRN : RED);
+	printf("%stest_sortedAdd4\n", test_sortedAdd4() ? GRN : RED);
+	printf("%stest_contains1\n", test_contains1() ? GRN : RED);
+	printf("%stest_contains2\n", test_contains2() ? GRN : RED);
+	printf("%stest_contains3\n", test_contains3() ? GRN : RED);
+	printf("%stest_contains4\n", test_contains4() ? GRN : RED);
+	printf("%stest_inverseDelete1\n", test_inverseDelete1() ? GRN : RED);
+	printf("%stest_inverseDelete2\n", test_inverseDelete2() ? GRN : RED);
+	printf("%stest_inverseDelete3\n", test_inverseDelete3() ? GRN : RED);
 
 
 	// A Continuacion dejamos algunos ejemplos de como
