@@ -11,7 +11,8 @@
 
 ```C	
 📄container.c	
-
+//Definicion de las funciones de contenedores
+	
 	int len(char* s;
 	//Longitud del string s
 
@@ -19,7 +20,7 @@
 	//Duplica un string. Debe contar la cantidad de caracteres totales de src y solicitar la memoria equivalente. Luego, debe copiar todos los caracteres a esta nueva area de memoria. El puntero al nuevo string se almacenara en el doble puntero dst. Ademas, como valor de retorno se debe retornar el tamaño del string.
 
 	char normalizeChar(char c;
-	//Convierte el char c de minuscula a mayuscula
+	//Retorna el char c en mayuscula
 
 	int equalStr(char* s1, char* s2;
 	//Evalua la igualdad entre los strings s1 y s2 caracter por caracter

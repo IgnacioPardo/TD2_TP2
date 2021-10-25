@@ -29,8 +29,8 @@ int dupStr(char* src, char** dst){
 }
 
 char normalizeChar(char c){
-	//Convierte el char c de minuscula a mayuscula
-	
+	//Retorna el char c en mayuscula
+
 	if (c > 96)
 		return c - 32;
 	return c;
