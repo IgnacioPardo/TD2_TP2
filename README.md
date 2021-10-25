@@ -132,3 +132,5 @@
 
 ### 🎓 Tecnologia Digital II UTDT
 ### 📦 [GitHub](https://github.com/IgnacioPardo/TD2_TP2)
+
+[![Linux Build Status](https://github.com/IgnacioPardo/TD2_TP2/blob/main/badge.svg)](https://replit.com/@IgnacioPardo/TD2TP2)
