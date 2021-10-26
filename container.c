@@ -21,7 +21,7 @@ int dupStr(char* src, char** dst){
 		//Asigna caracter por caracter del string src al nuevo string.
 		newStr[i] = src[i];
 	}
-	//El puntero de dst apunta al nuevo string.
+	//El puntero dst apunta al nuevo string.
 	*dst = newStr;
 	
 	//Retorna la longitud del nuevo string.
@@ -99,14 +99,12 @@ void split(char* source, int count, char** s1, char** s2){
 
 	//Itera por los caracteres del string
 	for (int i = 0; i < ls; i++){
-		if (i < count){
-			//Si el indice del caracter es menor a count, el caracter pertenece a la primera parte del split.
+		//Si el indice del caracter es menor a count, el caracter pertenece a la primera parte del split.
+		if (i < count)
 			p1[i] = source[i];
-		}
-		else{
-			//Si el indice del caracter es mayor o igual a count, el caracter pertenece a la segunda parte del split.
+		else
 			p2[i-count] = source[i];
-		}
+		//Si el indice del caracter es mayor o igual a count, el caracter pertenece a la segunda parte del split.		
 	}
 
 	//Si count es mayor que la longitud del string, a p2 se le asigna un string vacio
@@ -184,7 +182,7 @@ void sortedAdd(struct container* c, char* value) {
 
 	//Itera por el resto de la lista
 	while(n->next){
-		//Si el valor es menor o igual (cmpStr no retorno -1) en orden lexicografico, lo posiciona como el primer elemento de la lista, previo al nodo actual.
+		//Si el valor es menor o igual (cmpStr != -1) en orden lexicografico, lo posiciona como el primer elemento de la lista, previo al nodo actual.
 		if (cmpStr(value, n->next->data) + 1){
 			newNode->next = n->next;
 			n->next = newNode;
@@ -223,9 +221,8 @@ int inverseDelete(struct container* c, char* value) {
 				//Contabilizando cada borrada.
 				count++;
 			}
-			else{
+			else
 				n = n->next;
-			}
 		}
 		
 		//Finalmente evalua si del primer nodo de la lista la variable data es o no igual a value.

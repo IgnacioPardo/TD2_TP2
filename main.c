@@ -810,6 +810,6 @@ int main() {
 	printf("\n%stest_inverseDelete2b%s", (test_inverseDelete2b(print) ? GRN "✅ " : RED "❌ "), (print ? separator : ""));
 	printf("\n%stest_inverseDelete3a%s", (test_inverseDelete3a(print) ? GRN "✅ " : RED "❌ "), (print ? separator : ""));
 	printf("\n%stest_inverseDelete3b\n", (test_inverseDelete3b(print) ? GRN "✅ " : RED "❌ "));
-	
+
 	return 0;
 }
