@@ -292,12 +292,20 @@ int test_split1a(int print) {
 
     char* first;
     char* last;
-    split("", 1, &first, &last);
+
+		int count = 1;
+		int l = 0;
+		char* src = (char*)malloc((l + 1) * sizeof(char));
+
+		src[l] = '\0';
+
+    split(src, count, &first, &last);
 
     if (print)
-        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "", 1, first, last);
+        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "", count, first, last);
 
-    return equalStr(first, "") * equalStr(last, "");
+    int out = equalStr(first, "") * equalStr(last, "");
+		return out;
 }
 
 int test_split1b(int print) {
@@ -307,12 +315,20 @@ int test_split1b(int print) {
 
     char* first;
     char* last;
-    split("", 2, &first, &last);
+
+		int count = 2;
+		int l = 0;
+		char* src = (char*)malloc((l + 1) * sizeof(char));
+
+		src[l] = '\0';
+
+    split(src, count, &first, &last);
 
     if (print)
-        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "", 2, first, last);
+        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "", count, first, last);
 
-    return equalStr(first, "") * equalStr(last, "");
+    int out = equalStr(first, "") * equalStr(last, "");
+		return out;
 }
 
 int test_split1c(int print) {
@@ -322,12 +338,20 @@ int test_split1c(int print) {
 
     char* first;
     char* last;
-    split("", 3, &first, &last);
+
+		int count = 3;
+		int l = 0;
+		char* src = (char*)malloc((l + 1) * sizeof(char));
+
+		src[l] = '\0';
+
+    split(src, count, &first, &last);
 
     if (print)
-        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "", 3, first, last);
+        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "", count, first, last);
 
-    return equalStr(first, "") * equalStr(last, "");
+    int out = equalStr(first, "") * equalStr(last, "");
+		return out;
 }
 
 int test_split2a(int print) {
@@ -352,7 +376,10 @@ int test_split2b(int print) {
 
     char* first;
     char* last;
-    split("a", 2, &first, &last);
+		char* src = (char *)malloc(2*sizeof(char));
+		src[0] = 'a';
+		src[1] = '\0';
+    split(src, 2, &first, &last);
 
     if (print)
         printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "a", 2, first, last);
@@ -367,7 +394,10 @@ int test_split2c(int print) {
 
     char* first;
     char* last;
-    split("a", 3, &first, &last);
+		char* src = (char *)malloc(2*sizeof(char));
+		src[0] = 'a';
+		src[1] = '\0';
+    split(src, 3, &first, &last);
 
     if (print)
         printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "a", 3, first, last);

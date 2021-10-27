@@ -78,7 +78,7 @@ int cmpStr(char* s1, char* s2) {
     return signo(l2 - l1);
 }
 
-void split(char* source, int count, char** s1, char** s2) {
+void _split(char* source, int count, char** s1, char** s2) {
     //A partir del string en source, genera dos nuevos strings s1 y s2. s1 debe contener los primeros count caracteres del string source, mientas que s2 debe contener los caracteres restantes. La memoria del string source pasado por parametro debe ser liberada. En caso que count supere la cantidad de caracteres totales de source, se debe retornar en s2 un string vacio. El parametro count es siempre un numero positivo.
 
     int ls = len(source);
@@ -96,11 +96,12 @@ void split(char* source, int count, char** s1, char** s2) {
     if (count < ls) {
         p2 = (char*)malloc((ls - count) * sizeof(char));
         for (int i = count; i < ls; i++) {
-            p2 = source[i];
-        }
+            p2[i] = source[i];
+        }	
     }
     else {
-        p2 = "";
+        p2 = (char*)malloc(1*sizeof(char));
+				p2[0] = '\0';
     }
 
     // Libero la memoria del string source pasado por parametro
@@ -111,6 +112,55 @@ void split(char* source, int count, char** s1, char** s2) {
     *s2 = p2;
 }
 
+void split(char* source, int count, char** s1, char** s2){
+	//A partir del string en source, genera dos nuevos strings s1 y s2. s1 debe contener los primeros count caracteres del string source, mientas que s2 debe contener los caracteres restantes. La memoria del string source pasado por parametro debe ser liberada. En caso que count supere la cantidad de caracteres totales de source, se debe retornar en s2 un string vacio. El parametro count es siempre un numero positivo.
+  
+	int ls = len(source);
+	//Asigna memoria para la primera y la segunda parte del string.
+	//len(p1) := count
+	//len(p2) := len(source) - count
+	char* p1 = (char*)malloc((count+1) * sizeof(char));
+	char* p2;
+
+	for (int i = 0; i < count; i++) {
+			p1[i] = source[i];
+	}
+	
+	p1[count] = '\0';
+
+	if (count > ls) {
+		p2 = (char*)malloc(1*sizeof(char));
+		p2[0] = '\0';
+	}
+	else{
+		p2 = (char*)malloc((ls-count)*sizeof(char));
+		for (int i = 0; i < ls-count; i++) {
+			p1[i] = source[i];
+		}
+		p2[ls-count] = '\0';
+	}
+	dupStr(p1, s1);
+	free(p1);
+	dupStr(p2, s2);
+ 	/*
+	//Itera por los caracteres del string
+ 	for (int i = 0; i < ls+1; i++){
+ 		//Si el indice del caracter es menor a count, el caracter pertenece a la primera parte del split.
+ 		if (i < count)
+ 			p1[i] = source[i];
+ 		else
+		 	if (i == count)
+			 p1[i] = '\0';
+ 			p2[i-count] = source[i];
+ 		//Si el indice del caracter es mayor o igual a count, el caracter pertenece a la segunda parte del split.		
+ 	}*/
+
+	free(source);
+	
+	//Los punteros de s1 y s2 apuntan a p1 y p2
+	//*s1 = p1;
+	//*s2 = p2;
+}
 int getIndex(char* s) {
     //Retorna el indice del contenedor a donde corresponde el string s
 
