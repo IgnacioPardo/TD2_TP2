@@ -305,6 +305,8 @@ int test_split1a(int print) {
         printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "", count, first, last);
 
     int out = equalStr(first, "") * equalStr(last, "");
+		free(first);
+		free(last);
 		return out;
 }
 
@@ -328,6 +330,8 @@ int test_split1b(int print) {
         printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "", count, first, last);
 
     int out = equalStr(first, "") * equalStr(last, "");
+		free(first);
+		free(last);
 		return out;
 }
 
@@ -339,7 +343,7 @@ int test_split1c(int print) {
     char* first;
     char* last;
 
-		int count = 3;
+		int count = 2;
 		int l = 0;
 		char* src = (char*)malloc((l + 1) * sizeof(char));
 
@@ -351,6 +355,8 @@ int test_split1c(int print) {
         printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "", count, first, last);
 
     int out = equalStr(first, "") * equalStr(last, "");
+		free(first);
+		free(last);
 		return out;
 }
 
@@ -361,48 +367,75 @@ int test_split2a(int print) {
 
     char* first;
     char* last;
-    split("a", 1, &first, &last);
+
+		int count = 1;
+		int l = 1;
+		char* src = (char*)malloc((l + 1) * sizeof(char));
+
+		src[0] = 'a';
+		src[l] = '\0';
+
+    split(src, count, &first, &last);
 
     if (print)
-        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "a", 1, first, last);
+        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "", count, first, last);
 
-    return equalStr(first, "a") * equalStr(last, "");
+    int out = equalStr(first, "a") * equalStr(last, "");
+		free(first);
+		free(last);
+		return out;
 }
 
 int test_split2b(int print) {
     //Un string de un caracter, count = 2
     if (print)
-        printf("\n%sUn string de un caracter, count = 2\n", CYN);
+        printf("\n%sUn string de un caracter, count = 1\n", CYN);
 
     char* first;
     char* last;
-		char* src = (char *)malloc(2*sizeof(char));
+
+		int count = 1;
+		int l = 1;
+		char* src = (char*)malloc((l + 1) * sizeof(char));
+
 		src[0] = 'a';
-		src[1] = '\0';
-    split(src, 2, &first, &last);
+		src[l] = '\0';
+
+    split(src, count, &first, &last);
 
     if (print)
-        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "a", 2, first, last);
+        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "", count, first, last);
 
-    return equalStr(first, "a") * equalStr(last, "");
+    int out = equalStr(first, "a") * equalStr(last, "");
+		free(first);
+		free(last);
+		return out;
 }
 
 int test_split2c(int print) {
     //Un string de un caracter, count = 3
     if (print)
-        printf("\n%sUn string de un caracter, count = 3\n", CYN);
+        printf("\n%sUn string de un caracter, count = 1\n", CYN);
 
     char* first;
     char* last;
-		char* src = (char *)malloc(2*sizeof(char));
+
+		int count = 1;
+		int l = 1;
+		char* src = (char*)malloc((l + 1) * sizeof(char));
+
 		src[0] = 'a';
-		src[1] = '\0';
-    split(src, 3, &first, &last);
+		src[l] = '\0';
+
+    split(src, count, &first, &last);
 
     if (print)
-        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "a", 3, first, last);
+        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "", count, first, last);
 
-    return equalStr(first, "a") * equalStr(last, "");
+    int out = equalStr(first, "a") * equalStr(last, "");
+		free(first);
+		free(last);
+		return out;
 }
 
 int test_split3a(int print) {
@@ -412,12 +445,29 @@ int test_split3a(int print) {
 
     char* first;
     char* last;
-    split("mostacho", 1, &first, &last);
+
+		int count = 1;
+		int l = 8;
+		char* src = (char*)malloc((l+1) * sizeof(char));
+		src[0] = 'm';
+		src[1] = 'o';
+		src[2] = 's';
+		src[3] = 't';
+		src[4] = 'a';
+		src[5] = 'c';
+		src[6] = 'h';
+		src[7] = 'o';
+		src[l] = '\0';
+
+    split(src, count, &first, &last);
 
     if (print)
-        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "mostacho", 1, first, last);
+        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "", count, first, last);
 
-    return equalStr(first, "m") * equalStr(last, "ostacho");
+    int out = equalStr(first, "m") * equalStr(last, "ostacho");
+		free(first);
+		free(last);
+		return out;
 }
 
 int test_split3b(int print) {
@@ -427,27 +477,61 @@ int test_split3b(int print) {
 
     char* first;
     char* last;
-    split("mostacho", 2, &first, &last);
+
+		int count = 2;
+		int l = 8;
+		char* src = (char*)malloc((l+1) * sizeof(char));
+		src[0] = 'm';
+		src[1] = 'o';
+		src[2] = 's';
+		src[3] = 't';
+		src[4] = 'a';
+		src[5] = 'c';
+		src[6] = 'h';
+		src[7] = 'o';
+		src[l] = '\0';
+
+    split(src, count, &first, &last);
 
     if (print)
-        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "mostacho", 2, first, last);
+        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "", count, first, last);
 
-    return equalStr(first, "mo") * equalStr(last, "stacho");
+    int out = equalStr(first, "mo") * equalStr(last, "stacho");
+		free(first);
+		free(last);
+		return out;
 }
 
 int test_split3c(int print) {
-    // Un string de multiples caracteres, count = 3
+    // Un string de multiples caracteres, count = 5
     if (print)
         printf("\n%s Un string de multiples caracteres, count = 3\n", CYN);
 
     char* first;
     char* last;
-    split("mostacho", 3, &first, &last);
+
+		int count = 5;
+		int l = 8;
+		char* src = (char*)malloc((l+1) * sizeof(char));
+		src[0] = 'm';
+		src[1] = 'o';
+		src[2] = 's';
+		src[3] = 't';
+		src[4] = 'a';
+		src[5] = 'c';
+		src[6] = 'h';
+		src[7] = 'o';
+		src[l] = '\0';
+
+    split(src, count, &first, &last);
 
     if (print)
-        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "mostacho", 3, first, last);
+        printf("%s\n\"%s\" %i: \"%s\"|\"%s\"\n", WHT, "", count, first, last);
 
-    return equalStr(first, "mos") * equalStr(last, "tacho");
+    int out = equalStr(first, "mosta") * equalStr(last, "cho");
+		free(first);
+		free(last);
+		return out;
 }
 
 int test_sortedAdd1(int print) {

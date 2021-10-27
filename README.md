@@ -97,7 +97,7 @@
 	int test_split3b();
 	// Un string de multiples caracteres, count = 2
 	int test_split3c();
-	// Un string de multiples caracteres, count = 3
+	// Un string de multiples caracteres, count = 5
 	int test_sortedAdd1();
 	//Agregar un dato por lista
 	int test_sortedAdd2();
