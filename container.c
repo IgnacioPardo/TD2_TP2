@@ -97,7 +97,7 @@ void split(char* source, int count, char** s1, char** s2){
 		p2[0] = '\0';
 	}
 	else{
-		p2 = (char*)malloc((ls-count)*sizeof(char));
+		p2 = (char*)malloc((ls-count+1)*sizeof(char));
 		for (int i = 0; i <= ls-count; i++) {
 			p2[i] = source[i+count];
 		}
