@@ -24,7 +24,7 @@ char normalizeChar(char c);
 
 void split(char* source, int count, char** s1, char** s2);
 
-int getIndex(char * s);
+int getIndex(char* s);
 
 void sortedAdd(struct container* c, char* value);
 
