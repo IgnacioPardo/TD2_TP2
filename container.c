@@ -17,7 +17,7 @@ int dupStr(char* src, char** dst) {
     int l = len(src);
     //Asigna la memoria necesaria para el string copiado, incluyendo el NULL-TERMINATING character.
     char* newStr = (char*)malloc((l + 1) * sizeof(char));
-    for (int i = 0; i < l; i++) {
+    for (int i = 0; i <= l; i++) {
         //Asigna caracter por caracter del string src al nuevo string.
         newStr[i] = src[i];
     }
@@ -25,7 +25,7 @@ int dupStr(char* src, char** dst) {
     *dst = newStr;
 
     //Retorna la longitud del nuevo string.
-    return len(*dst);
+    return l;
 }
 
 char normalizeChar(char c) {
@@ -53,37 +53,29 @@ int equalStr(char* s1, char* s2) {
     return 1;
 }
 
-int cmpStr(char* s1, char* s2) {
-    //Compara dos strings en orden lexicografico. Retorna (0 si son iguales, 1 si s1<s2, −1 si s2<s1)
-
-    int l1 = len(s1);
-    int l2 = len(s2);
-
-    //Dada la longitud de uno de los dos strings, sin importar cual, itera por los caracteres de ambos.
-    for (int i = 0; i < l1; i++) {
-        // Si el valor de i llega a valer la longitud de un string pero es menor que la longitud del otro, asume todas las posiciones previas fueron iguales, pero el string en si es mas corto por lo tanto es menor en orden lexicografico.
-        if (i + 1 == l1 && i + 1 < l2)
-            return 1;
-        else if (i + 1 == l2 && i + 1 < l1)
-            return -1;
-        else {
-            //Para comparar los caracteres de cada string, los pasa todos a mayusculas para respetar el orden.
-            char a = normalizeChar(s1[i]);
-            char b = normalizeChar(s2[i]);
-
-            //De algun caracter ser mayor que el otro, retorna el orden correspondiente.
-            if (a > b)
-                return -1;
-            else if (a < b)
-                return 1;
-        }
-    }
-    //Si ambos strings son iguales, retorna 0.
-    if (equalStr(s1, s2))
-        return 0;
-
-    //Todas las condiciones son evaluadas previamente, la unica restante es s1 == s2, que es evaluada previamente con la funcion equalStr.
+int signo(int a) {
+    if (a > 0)
+        return 1;
+    else if (a < 0)
+        return -1;
     return 0;
+}
+
+int cmpStr(char* s1, char* s2) {
+    int l1 = len(s1), l2 = len(s2);
+
+    int min_len = l1 < l2 ? l1 : l2;
+
+    for (int i = 0; i < min_len; i++) {
+        int s = signo(normalizeChar(s2[i]) - normalizeChar(s1[i]));
+
+        // Si los caracteres son distintos, alguna string es mayor
+        if (s != 0)
+            return s;
+    }
+
+    // Una es prefijo de la otra ⇒ Si tienen la misma longitud, son iguales 
+    return signo(l2 - l1);
 }
 
 void split(char* source, int count, char** s1, char** s2) {
@@ -95,21 +87,24 @@ void split(char* source, int count, char** s1, char** s2) {
     //len(p1) := count
     //len(p2) := len(source) - count
     char* p1 = (char*)malloc(count * sizeof(char));
-    char* p2 = (char*)malloc((len(source) - count) * sizeof(char));
-
-    //Itera por los caracteres del string
-    for (int i = 0; i < ls; i++) {
-        //Si el indice del caracter es menor a count, el caracter pertenece a la primera parte del split.
-        if (i < count)
-            p1[i] = source[i];
-        else
-            p2[i - count] = source[i];
-        //Si el indice del caracter es mayor o igual a count, el caracter pertenece a la segunda parte del split.
+    for (int i = 0; i < count; i++) {
+        p1[i] = source[i];
     }
 
-    //Si count es mayor que la longitud del string, a p2 se le asigna un string vacio
-    if (count > ls)
+
+    char* p2;
+    if (count < ls) {
+        p2 = (char*)malloc((ls - count) * sizeof(char));
+        for (int i = count; i < ls; i++) {
+            p2 = source[i];
+        }
+    }
+    else {
         p2 = "";
+    }
+
+    // Libero la memoria del string source pasado por parametro
+    free(source);
 
     //Los punteros de s1 y s2 apuntan a p1 y p2
     *s1 = p1;
