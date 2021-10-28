@@ -136,4 +136,4 @@
 [![Linux Build Status](https://github.com/IgnacioPardo/TD2_TP2/blob/main/badge_Linux.svg)](https://replit.com/@IgnacioPardo/TD2TP2)
 [![macOS Build Status](https://github.com/IgnacioPardo/TD2_TP2/blob/main/badge_macOS.svg)](https://github.com/IgnacioPardo/TD2_TP2)
 
-```Compiled on Ubuntu 18.04.5 LTS```
+```Compiled with gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04.5 LTS) ```
