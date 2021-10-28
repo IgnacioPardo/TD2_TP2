@@ -84,19 +84,23 @@ void split(char* source, int count, char** s1, char** s2){
 	int ls = len(source);
 	//Asigna memoria para la primera y la segunda parte del string.
 	//len(p1) := count
-	//len(p2) := len(source) - count
 	char* p1 = (char*)malloc((count+1) * sizeof(char));
+
+	//Copiar source[:count] a p1
 	for (int i = 0; i < count; i++) {
 			p1[i] = source[i];
 	}
+	//NULL Terminator
 	p1[count] = '\0';
 
 	char* p2;
 	if (count >= ls) {
+		//Si count es mayor o igual a len(src), p2 = string vacio ""
 		p2 = (char*)malloc(1*sizeof(char));
 		p2[0] = '\0';
 	}
 	else{
+		//Si count < len(src), se copia source[count:] a p2
 		p2 = (char*)malloc((ls-count+1)*sizeof(char));
 		for (int i = 0; i <= ls-count; i++) {
 			p2[i] = source[i+count];
@@ -104,8 +108,11 @@ void split(char* source, int count, char** s1, char** s2){
 		p2[ls-count+1] = '\0';
 	}
 	
+	//Copiar strings first y last a los punteros pasados por parametros
 	dupStr(p1, s1);
 	dupStr(p2, s2);
+
+	//Liberar memoria
 	free(p1);
 	free(p2);
 
