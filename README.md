@@ -1,4 +1,4 @@
-# TD2_TP1
+# TD2_TP2
 
 ### 💾 [Trabajo Practico 2](https://github.com/IgnacioPardo/TD2_TP2/blob/main/Enunciado_TP2.pdf) - [Tecnologia Digital II UTDT](https://www.utdt.edu/ver_contenido.php?id_contenido=19866&id_item_menu=31534)
 
