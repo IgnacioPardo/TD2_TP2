@@ -1,4 +1,43 @@
 #include "container.h"
+/*
+Los strings que se agregan al container se agregan sobre una de las 4 listas existentes. Para determinar sobre que lista se debe agregar, se toma el primer byte del string y sobre este byte se identifica el par de bits menos significativos. Los bits se usan como indice en el arreglo de 4 posiciones. Por ejemplo, dado el string "arco" que comienza con "a", entonces el byte que corresponda a esta letra es 97d. Si se toman los ultimos dos bits se obtiene 01b, resultando en la posicion 1 del arreglo data dentro de la estructura container.
+Por u ltimo, una vez seleccionada la lista (o slot), se debe agregar el string en la lista de forma ordenada. Para esto se debe buscar el lugar donde agregar el nuevo nodo de la lista y el dato utilizando la funcion cmpStr implementada previamente. A partir de esta funcion es posible comparar dos strings y establecer una relacion de orden entre los mismos.
+
+                        ┌───────┐   ┌───────┐   ┌───────┐
+                        │       │   │       │   │       │  next 
+             ┌─────────►│       ├───►       ├───►       │
+             │          ├───────┤   ┌───────┤   ┌───────┤
+             │          │       │   │       │   │       │  data
+     ┌─ ┌────┴───┐      └┬──────┘   └┬──────┘   └┬──────┘
+     │  │   00   │       └─► dado    └─► lado    └─► pato 
+     │  │        │
+     │  │        │      ┌───────┐   ┌───────┐   ┌───────┐   ┌───────┐   ┌───────┐
+     │  │        │      │       │   │       │   │       │   │       │   │   0   │
+     │  ├────────┤   ┌──►       ├───►       ├───►       ├───►       ├───►       │
+     │  │   01   │   │  ┌───────┤   ┌───────┤   ┌───────┤   ┌───────┤   ┌───────┤
+     │  │        ├───┘  │       │   │       │   │       │   │       │   │       │
+     │  │        │      └┬──────┘   └┬──────┘   └┬──────┘   └┬──────┘   └┬──────┘
+     │  │        │       └─► ala     └─► arco    └─► mate    └─► mesa    └─► queso
+     │  ├────────┤
+data │  │   10   │      ┌───────┐   ┌───────┐   ┌───────┐
+     │  │        │      │       │   │       │   │   0   │
+     │  │        ├──────►       ├───►       ├───►       │
+     │  │        │      ┌───────┤   ┌───────┤   ┌───────┤
+     │  ├────────┤      │       │   │       │   │       │
+     │  │   11   │      └┬──────┘   └┬──────┘   └┬──────┘
+     │  │        │       └─► barco   └─► flor    └─► rojo
+     │  │        ├──┐
+     │  │        │  │   ┌───────┐   ┌───────┐
+     └─ ├────────┤  │   │       │   │   0   │
+        │   13   │  └───►       ├───►       │
+        │        │      ┌───────┤   ┌───────┤
+        │        │      │       │   │       │
+        │        │      └┬──────┘   └┬──────┘
+        └────────┘       └─► casa    └─► casa
+          count
+*/
+
+
 
 int len(char* s) {
     //Longitud del string s
@@ -70,7 +109,7 @@ int cmpStr(char* s1, char* s2) {
         int s = signo(normalizeChar(s2[i]) - normalizeChar(s1[i]));
 
         // Si los caracteres son distintos, alguna string es mayor
-        if (s != 0)
+        if (s)
             return s;
     }
 
@@ -126,7 +165,7 @@ int getIndex(char* s) {
 }
 
 int contains(struct container* c, char* value) {
-    //Determina la cantidad de veces que value est ́a definido dentro de container. Debe retonar la cantidad de apariciones del dato.
+    //Determina la cantidad de veces que value esta definido dentro de container. Debe retonar la cantidad de apariciones del dato.
 
     int count = 0;
     //Itera por las 4 listas del contenedor
@@ -143,7 +182,7 @@ int contains(struct container* c, char* value) {
 }
 
 void sortedAdd(struct container* c, char* value) {
-    //Agregar el string value pasado por par ́ametro dentro del container, respetando los invariantes de la estructura indicados anteriormente.
+    //Agregar el string value pasado por parametro dentro del container, respetando los invariantes de la estructura indicados anteriormente.
 
     //Si el valor ya no pertenece al contenedor se incrementa la variable count del contenerod
     if (!contains(c, value))
