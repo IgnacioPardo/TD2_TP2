@@ -2,7 +2,7 @@
 
 /*
 Los strings que se agregan al container se agregan sobre una de las 4 listas existentes. Para determinar sobre que lista se debe agregar, se toma el primer byte del string y sobre este byte se identifica el par de bits menos significativos. Los bits se usan como indice en el arreglo de 4 posiciones. Por ejemplo, dado el string "arco" que comienza con "a", entonces el byte que corresponda a esta letra es 97d. Si se toman los ultimos dos bits se obtiene 01b, resultando en la posicion 1 del arreglo data dentro de la estructura container.
-Por u ltimo, una vez seleccionada la lista (o slot), se debe agregar el string en la lista de forma ordenada. Para esto se debe buscar el lugar donde agregar el nuevo nodo de la lista y el dato utilizando la funcion cmpStr implementada previamente. A partir de esta funcion es posible comparar dos strings y establecer una relacion de orden entre los mismos.
+Por ultimo, una vez seleccionada la lista (o slot), se debe agregar el string en la lista de forma ordenada. Para esto se debe buscar el lugar donde agregar el nuevo nodo de la lista y el dato utilizando la funcion cmpStr implementada previamente. A partir de esta funcion es posible comparar dos strings y establecer una relacion de orden entre los mismos.
 
                         ┌───────┐   ┌───────┐   ┌───────┐
                         │       │   │       │   │       │  next 
