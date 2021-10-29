@@ -92,6 +92,7 @@ int equalStr(char* s1, char* s2) {
 }
 
 int signo(int a) {
+	//Retorna el signo(1) del entero a pasado por parametro, 0 si a = 0
     if (a > 0)
         return 1;
     else if (a < 0)

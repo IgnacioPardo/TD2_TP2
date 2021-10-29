@@ -25,6 +25,9 @@
 	int equalStr(char* s1, char* s2);
 	//Evalua la igualdad entre los strings s1 y s2 caracter por caracter
 
+	int signo(int a);
+	//Retorna el signo(1) del entero a pasado por parametro, 0 si a = 0
+
 	int cmpStr(char* s1, char* s2);
 	//Compara dos strings en orden lexicografico. Retorna (0 si son iguales, 1 si s1<s2, −1 si s2<s1)
 
