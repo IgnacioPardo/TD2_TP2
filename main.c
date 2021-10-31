@@ -58,7 +58,8 @@ int test_dup3(int print) {
     }
 
     int size = dupStr(s, &dup);
-    //size == 96 for macOS
+		
+    //size == 96 para macOS
     if (equalStr(dup, s2) && size == 95) {
         free(dup);
         return 1;
