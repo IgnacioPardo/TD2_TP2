@@ -2,7 +2,7 @@
 
 ### 💾 Trabajo Practico 2 - [Tecnologia Digital II UTDT](https://www.utdt.edu/ver_contenido.php?id_contenido=19866&id_item_menu=31534)
 
-### 🧠 **Integrantes**: Luca Mazzarello - Camila Migdal - Ignacio Pardo
+### 🧠 **Integrantes**: Luca Mazzarello - Camila Migdal Mamrud - Ignacio Pardo
 
 ### 👨🏻‍🏫 **Profesor**: David Alejandro Gonzalez Marquez
 
